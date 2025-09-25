@@ -3,7 +3,7 @@ import React from 'react'
 
 function HeroBanner() {
   return (
-    <div className="p-7" id="about">
+    <div className="p-7 relative" id="about">
       <h1 className="text-7xl font-bold mt-30">
         Hi, I'm{" "}
         <span
@@ -80,6 +80,7 @@ function HeroBanner() {
           </a>
         </div>
       </div>
+     
     </div>
   );
 }
