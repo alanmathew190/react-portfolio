@@ -4,9 +4,9 @@ function Skills() {
   return (
     <div className="h-150 mt-20" id="skills">
       <h1 className="text-2xl font-bold text-center">Skills</h1>
-      <h1 className=" relative top-60 left-130 w-100 text-3xl font-bold">
+      {/* <h1 className=" relative top-60 left-130 w-100 text-3xl font-bold">
         Tools and Technologies
-      </h1>
+      </h1> */}
       <div className=" flex ">
         <img
           src="/src/images/java-script.png"
