@@ -2,7 +2,7 @@ import React from 'react'
 
 function Skills() {
   return (
-    <div className="h-260 mt-20" id="skills">
+    <div className="h-fit mt-20" id="skills">
       <div class="concave relative">
         <p className="border-e-2 pr-10 pl-10">#React</p>
         <p className="border-e-2 pr-10 pl-10">#Git</p>
@@ -67,14 +67,33 @@ function Skills() {
           alt=""
         />
       </div>
-      <h1 className='mt-100  ml-172 text-2xl font-bold '>My Services</h1>
-      <div className="grid grid-flow-row grid-cols-3 gap-10 text-center w-fit m-auto mt-10">
-        <p className="p-4 rounded-2xl bg-gray-200">React</p>
-        <p className="p-4 rounded-2xl bg-gray-200">Git</p>
-        <p className="p-4 rounded-2xl bg-gray-200">JavaScript</p>
-        <p className="p-4 rounded-2xl bg-gray-200">Tailwindcss</p>
-        <p className="p-4 rounded-2xl bg-gray-200">Python</p>
-        <p className="p-4 rounded-2xl bg-gray-200">Web Developer</p>
+      <h1 className="mt-100  ml-172 text-2xl font-bold ">My Services</h1>
+      <div className="grid grid-flow-row grid-cols-3 gap-10 text-center w-fit m-auto mt-10 text-xl text-gray-600 font-bold ">
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          Frontend Developer
+        </p>
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 bg-gray-200 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition duration-300">
+          Full stack Developer
+        </p>
+
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          React
+        </p>
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          Git
+        </p>
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          JavaScript
+        </p>
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          Tailwindcss
+        </p>
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          Python
+        </p>
+        <p className="p-4 rounded-2xl border-t-2 shadow-xl/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300 bg-gray-200">
+          Web Developer
+        </p>
       </div>
     </div>
   );
