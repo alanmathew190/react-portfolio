@@ -6,31 +6,50 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaEnvelope,
+  FaGithub,
   FaPaperPlane,
 } from "react-icons/fa";
 import { Element } from "react-scroll";
 
 const Contact = () => {
-  // State for form management (needed for React)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  // Code snippet to display
+  const codeSnippet = [
+    "// Initialize Alan's contact form API client",
+    "const client = new ContactClient('alan-j-mathew.dev');",
+    "",
+    "// Prepare the message payload",
+    "const payload = {",
+    "  senderName: name.value,",
+    "  senderEmail: email.value,",
+    "  content: message.value",
+    "};",
+    "",
+    "// Attempt to send the message",
+    "client.send(payload).then(response => {",
+    "  console.log('Message sent successfully!', response.id);",
+    "}).catch(error => {",
+    "  console.error('Failed to send:', error);",
+    "});",
+  ];
+
   const contactInfo = [
-    // Reduced contact list for better layout alongside the form
     {
       icon: FaEnvelope,
       label: "Email",
       value: "alanmathew190@gmail.com",
       link: "mailto:alanmathew190@gmail.com",
-      color: "text-blue-600",
+      color: "text-cyan-600",
     },
     {
       icon: FaWhatsapp,
       label: "WhatsApp",
-      value: "9446631601",
+      value: "+91 9446631601",
       link: "https://wa.me/919446631601",
       color: "text-green-500",
     },
@@ -41,13 +60,19 @@ const Contact = () => {
       icon: FaLinkedinIn,
       link: "https://www.linkedIn.com/in/alan-j-mathew",
       label: "LinkedIn",
-      color: "text-blue-600",
+      color: "hover:text-blue-700",
+    },
+    {
+      icon: FaGithub,
+      link: "https://github.com/alanmathew190",
+      label: "GitHub",
+      color: "hover:text-gray-900",
     },
     {
       icon: FaInstagram,
       link: "https://www.instagram.com/alan.j.mathew",
       label: "Instagram",
-      color: "text-pink-500",
+      color: "hover:text-pink-600",
     },
   ];
 
@@ -55,135 +80,190 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Note: To make this form *actually* send an email, you will need a backend service
-  // like Formspree, Netlify Forms, or a custom API endpoint.
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Form submitted! Data: ${JSON.stringify(formData)}`);
-    // Here you would typically call an API endpoint to send the email
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <Element name="contact" className="bg-white text-gray-800">
+    <Element name="contact" className="bg-[#FFFDF2] text-gray-800">
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Let's Connect
+            <span className="relative pb-2 inline-block">
+              Let's Connect
+              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/3 h-1 bg-cyan-500 rounded"></span>
+            </span>
           </h2>
 
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* --- COLUMN 1: CONTACT FORM --- */}
-            <div className="lg:w-7/12 p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800">
-                Send Me a Message
-              </h3>
+          <div className="flex flex-col lg:flex-row gap-12 lg:items-start">
+            {" "}
+            {/* Added lg:items-start here for alignment */}
+            {/* --- COLUMN 1: CONTACT FORM (CODE BLOCK STYLE) --- */}
+            <div className="lg:w-7/12">
+              {/* Code Block */}
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <div className="flex items-center p-3 bg-gray-800 text-gray-300 rounded-t-xl">
+                  <div className="flex space-x-2 mr-3">
+                    <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+                    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+                    <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                  </div>
+                  <span className="text-sm font-mono">
+                    src/components/Contact.js
+                  </span>
+                </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-150"
-                    placeholder="Your Name"
-                  />
+                <div className="p-6 bg-gray-900 overflow-x-auto">
+                  <pre className="text-sm font-mono leading-relaxed">
+                    {codeSnippet.map((line, index) => (
+                      <p
+                        key={index}
+                        className={
+                          line.includes("//")
+                            ? "text-gray-500"
+                            : line.includes("const") || line.includes("return")
+                            ? "text-yellow-400"
+                            : line.includes("client.") ||
+                              line.includes("log") ||
+                              line.includes("error")
+                            ? "text-blue-400"
+                            : line.includes("(") ||
+                              line.includes("{") ||
+                              line.includes("}")
+                            ? "text-white"
+                            : "text-green-300"
+                        }
+                      >
+                        <span className="inline-block w-5 text-right text-gray-500 mr-2 select-none">
+                          {index + 1}
+                        </span>
+                        {line}
+                      </p>
+                    ))}
+                  </pre>
                 </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-150"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-150"
-                    placeholder="Tell me about your project..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center space-x-2 px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300"
-                >
-                  <FaPaperPlane />
-                  <span>Send Message</span>
-                </button>
-              </form>
-            </div>
+              </div>
 
-            {/* --- COLUMN 2: DIRECT LINKS & SOCIALS --- */}
-            <div className="lg:w-5/12 space-y-8">
-              {/* Direct Contact Links */}
-              <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                  Direct Contact
+              {/* Contact Form below Code (This dictates the height of the left column) */}
+              <div className="p-6 mt-4 bg-white border border-gray-200 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+                  Input Parameters
                 </h3>
-                <div className="space-y-4">
+
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Name:
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-cyan-500 focus:border-cyan-500 transition duration-150"
+                      placeholder="senderName"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Email:
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-cyan-500 focus:border-cyan-500 transition duration-150"
+                      placeholder="senderEmail"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Message (content):
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-cyan-500 focus:border-cyan-500 transition duration-150"
+                      placeholder="Your message content here..."
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full flex items-center justify-center space-x-2 px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-white bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50 transition transform hover:-translate-y-0.5 duration-300"
+                  >
+                    <FaPaperPlane className="text-lg" />
+                    <span>Execute Client.Send()</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+            {/* --- COLUMN 2: REFINED CONTACT INFO (No h-full) --- */}
+            <div className="lg:w-5/12">
+              {/* Removed h-full from this div */}
+              <div className="p-8 bg-white border border-gray-200 rounded-lg shadow-xl">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900 border-b pb-2 border-cyan-100">
+                  Reach Out Directly
+                </h3>
+
+                {/* Direct Links Section */}
+                <div className="space-y-4 mb-10">
+                  {" "}
+                  {/* Adjusted spacing to space-y-4 */}
                   {contactInfo.map((item, index) => (
                     <a
                       key={index}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-3 group"
+                      className="flex items-center space-x-4 p-3 -ml-3 rounded-lg hover:bg-gray-50 transition duration-200 group"
                     >
                       <item.icon
-                        className={`text-2xl ${item.color} group-hover:scale-110 transition duration-200`}
+                        className={`text-2xl ${item.color} group-hover:scale-105 transition duration-300`}
                       />
-                      <span className="text-gray-700 group-hover:text-gray-900 transition duration-200">
-                        {item.value}
-                      </span>
+                      <div>
+                        <span className="block text-sm font-semibold text-gray-900">
+                          {item.label}
+                        </span>
+                        <span className="block text-sm text-gray-600">
+                          {item.value}
+                        </span>
+                      </div>
                     </a>
                   ))}
                 </div>
-              </div>
 
-              {/* Social Media Links */}
-              <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                  My Socials
+                {/* Social Media Section */}
+                <h3 className="text-xl font-bold mb-4 text-gray-900 border-b pb-2 border-cyan-100">
+                  Connect Online
                 </h3>
-                <div className="flex space-x-6">
+                <div className="flex space-x-6 pt-2">
                   {socialInfo.map((item, index) => (
                     <a
                       key={index}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`text-4xl ${item.color} hover:text-opacity-80 transition duration-200`}
+                      className={`text-3xl text-gray-500 transition duration-200 ${item.color} hover:scale-110`}
                       aria-label={item.label}
                     >
                       <item.icon />
