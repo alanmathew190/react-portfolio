@@ -7,20 +7,23 @@ import Projects from './components/Projects'
 import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import './App.css'
+import { ThemeProvider } from './components/ThemeContext'
 
 function App() {
   
   return (
-    <div>
-      <Header />
-      <HeroBanner />
-      <Skills />
-      <Education />
-      <Projects />
-      <Certificates />
-      <Contact/>
-    </div>
-  )
+    <ThemeProvider>
+      <div className="transition-colors duration-500">
+        <Header />
+        <HeroBanner />
+        <Skills />
+        <Education />
+        <Projects />
+        <Certificates />
+        <Contact />
+      </div>
+    </ThemeProvider>
+  );
 }
 
 export default App

@@ -14,7 +14,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="sticky z-100 top-0 backdrop-blur-md bg-white/70 p-5 flex justify-between transition-all duration-500">
+    <div className="sticky z-200 top-0 backdrop-blur-md bg-white/70 p-5 flex justify-between transition-all duration-500">
       <div
         className={`absolute bottom-0 left-0 w-full h-0.5 bg-gray-300 transition-opacity duration-500 ${
           scrolled ? "opacity-100" : "opacity-0"
@@ -30,7 +30,7 @@ function Header() {
           <Link
             to="about"
             smooth={true}
-            duration={600}
+            duration={200}
             offset={50}
             className="cursor-pointer"
           >
@@ -50,9 +50,9 @@ function Header() {
         </li>
         <li>
           <Link
-            to="education"
+            to="education-experience"
             smooth={true}
-            duration={600}
+            duration={100}
             offset={50}
             className="cursor-pointer"
           >
@@ -74,7 +74,7 @@ function Header() {
           <Link
             to="certificates"
             smooth={true}
-            duration={600}
+            duration={100}
             offset={50}
             className="cursor-pointer"
           >
@@ -85,7 +85,7 @@ function Header() {
           <Link
             to="contact"
             smooth={true}
-            duration={600}
+            duration={100}
             offset={50}
             className="cursor-pointer"
           >
