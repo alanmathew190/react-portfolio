@@ -51,26 +51,8 @@ function Projects() {
 
   return (
     <div className="relative min-h-screen bg-[#000011] py-16 px-6 flex flex-col items-center" id='projects'>
-      {/* Particle Background */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          fullScreen: { enable: false },
-          particles: {
-            number: { value: 50, density: { enable: true, value_area: 800 } },
-            color: { value: "#00ffff" },
-            shape: { type: "circle" },
-            opacity: { value: 0.2 },
-            size: { value: 3, random: true },
-            move: { enable: true, speed: 0.5, direction: "none", random: true },
-          },
-        }}
-        className="absolute inset-0 -z-10"
-      />
 
-      <h2 className="text-3xl font-bold mb-12 text-white text-center z-10">
+      <h2 className="text-3xl font-bold mb-12 text-white text-center z-10 underline  underline-offset-8">
         My Projects
       </h2>
 
