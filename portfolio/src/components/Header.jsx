@@ -7,7 +7,7 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       // Check if scrolling is more than 50px to reduce flicker near the top
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,7 +27,7 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between transition-all duration-500">
         {/* Logo/Name */}
         <h1 className="text-2xl tracking-wide text-gray-900 font-extrabold">
-          <span className="text-cyan-600">A</span>lan
+          A<span className="text-cyan-600">J</span>M
         </h1>
 
         {/* Navigation Links (Hidden on small screens, shown on md and up) */}
@@ -67,7 +67,7 @@ function Header() {
 
       {/* Dynamic Scroll Indicator Line */}
       <div
-        className={`absolute bottom-0 left-0 w-full h-[3px] bg-cyan-500 transition-opacity duration-500 ${
+        className={`absolute bottom-0 left-0 w-full h-[2px] bg-cyan-500 transition-opacity duration-500 ${
           scrolled ? "opacity-100" : "opacity-0"
         }`}
       ></div>
