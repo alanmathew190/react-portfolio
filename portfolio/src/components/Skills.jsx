@@ -1,18 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Import all skill icons from your src/images folder
+import jsIcon from "../images/java-script.png";
+import cssIcon from "../images/css-3.png";
+import reactIcon from "../images/logo.png";
+import nodeIcon from "../images/node-js.png";
+import physicsIcon from "../images/physics.png";
+import socialIcon from "../images/social.png";
+import githubIcon from "../images/ghub.png";
+import htmlIcon from "../images/html-5.png";
+import pythonIcon from "../images/python.png";
+import apiIcon from "../images/cloud-api.png";
+
 function Skills() {
   const icons = [
-    { src: "/src/images/java-script.png", alt: "JavaScript" },
-    { src: "/src/images/css-3.png", alt: "CSS" },
-    { src: "/src/images/logo.png", alt: "React" },
-    { src: "/src/images/node-js.png", alt: "NodeJS" },
-    { src: "/src/images/physics.png", alt: "Physics" },
-    { src: "/src/images/social.png", alt: "Social" },
-    { src: "/src/images/ghub.png", alt: "GitHub" },
-    { src: "/src/images/html-5.png", alt: "HTML" },
-    { src: "/src/images/python.png", alt: "Python" },
-    { src: "/src/images/cloud-api.png", alt: "API" },
+    { src: jsIcon, alt: "JavaScript" },
+    { src: cssIcon, alt: "CSS" },
+    { src: reactIcon, alt: "React" },
+    { src: nodeIcon, alt: "NodeJS" },
+    { src: physicsIcon, alt: "Physics" },
+    { src: socialIcon, alt: "Social" },
+    { src: githubIcon, alt: "GitHub" },
+    { src: htmlIcon, alt: "HTML" },
+    { src: pythonIcon, alt: "Python" },
+    { src: apiIcon, alt: "API" },
   ];
 
   const skillLevels = [
@@ -26,7 +38,7 @@ function Skills() {
 
   return (
     <div className="h-fit py-20 bg-[#FFFDF2]" id="skills">
-      {/* Heading */}
+      {/* Heading Tags */}
       <div className="concave relative -mt-45">
         <p className="border-e-2 pr-10">#React</p>
         <p className="border-e-2 pr-10 pl-10">#Git</p>

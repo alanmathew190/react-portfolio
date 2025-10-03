@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import meImg from "../images/me1.png";
+
+
+
 
 function HeroBanner() {
   return (
@@ -14,7 +18,6 @@ function HeroBanner() {
         <div className="absolute w-60 h-60 bg-cyan-400/10 rounded-full top-10 left-10 animate-pulse"></div>
         <div className="absolute w-72 h-72 bg-blue-400/10 rounded-full bottom-20 right-20 animate-pulse"></div>
       </div>
-
       {/* Heading */}
       <motion.h1
         className="text-7xl font-bold"
@@ -27,7 +30,6 @@ function HeroBanner() {
           Alan J Mathew
         </span>
       </motion.h1>
-
       {/* Subtitle with Typewriter Effect */}
       <motion.div
         className="text-4xl mt-7 text-gray-600 h-12"
@@ -37,7 +39,11 @@ function HeroBanner() {
       >
         <Typewriter
           options={{
-            strings: ["Web Developer", "Python Full-Stack Developer", "React Enthusiast"],
+            strings: [
+              "Web Developer",
+              "Python Full-Stack Developer",
+              "React Enthusiast",
+            ],
             autoStart: true,
             loop: true,
             delay: 75,
@@ -45,7 +51,6 @@ function HeroBanner() {
           }}
         />
       </motion.div>
-
       {/* About Text */}
       <motion.p
         className="max-w-2xl text-xl mt-10 leading-relaxed text-gray-700"
@@ -60,7 +65,6 @@ function HeroBanner() {
         challenge of turning complex requirements into clean, maintainable
         solutions and eager to contribute to innovative, forward-thinking teams.
       </motion.p>
-
       {/* Buttons + Social Icons */}
       <motion.div
         className="flex mt-10 items-center"
@@ -129,15 +133,13 @@ function HeroBanner() {
           ))}
         </div>
       </motion.div>
-
       {/* Hero Image (Static) */}
       <img
         className="absolute h-160 right-0 top-20 z-10"
-        src="/src/images/me1.png"
+        src={meImg}
         alt="Alan"
       />
-
-      {/* Scroll Indicator */}
+      ;{/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
