@@ -30,7 +30,17 @@ import tailIcon from "../images/Tailwind CSS.png"
     { src: vercelIcon, alt: "Vercel" },
     { src: tailIcon, alt: "Tailwind CSS" },
   ];
-
+  const skills = [
+    "Frontend Developer",
+    "Full Stack Developer",
+    "React",
+    "Git",
+    "JavaScript",
+    "TailwindCSS",
+    "Python",
+    "Web Developer",
+    "Responsive Design",
+  ];
 
 
 function Skills() {
@@ -89,27 +99,45 @@ function Skills() {
           ))}
         </div>
       </div>
-      <h1 className="mt-20 text-2xl font-bold text-center">My Services</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center w-fit m-auto mt-10 text-xl text-gray-600 font-bold">
-        {[
-          "Frontend Developer",
-          "Full Stack Developer",
-          "React",
-          "Git",
-          "JavaScript",
-          "TailwindCSS",
-          "Python",
-          "Web Developer",
-          "Responsive Design",
-        ].map((skill, i) => (
-          <motion.p
-            key={i}
-            className="px-7 py-3 rounded-2xl border shadow-md bg-white hover:shadow-blue-400/50 hover:scale-105 transition"
-            whileHover={{ rotate: -2, scale: 1.05 }}
-          >
-            {skill}
-          </motion.p>
-        ))}
+      <div className="mt-20 text-center">
+        <h1 className="text-3xl font-bold text-gray-900 underline underline-offset-8">
+          My Services
+        </h1>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-fit m-auto mt-12 text-lg font-bold">
+          {skills.map((skill, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              whileHover={{ scale: 1.1, rotate: -3 }}
+              className="relative group"
+            >
+              {/* Glowing background */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-60 blur-md transition group-hover:opacity-100"></div>
+
+              {/* Card */}
+              <div className="relative px-7 py-4 rounded-2xl bg-white text-gray-800 shadow-lg border border-gray-200 hover:border-purple-400 transition">
+                {skill}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Gradient shimmer animation */}
+        <style>{`
+        @keyframes gradient-shimmer {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .group:hover .absolute {
+          background-size: 200% 200%;
+          animation: gradient-shimmer 3s linear infinite;
+        }
+      `}</style>
       </div>
     </div>
   );

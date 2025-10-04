@@ -91,7 +91,7 @@ function HeroBanner() {
             transition={{ delay: 0.9, duration: 1 }}
           >
             <motion.a
-              href="/resume.pdf"
+              href="/AlanResume4-10-25.pdf"
               download
               className="bg-gradient-to-r from-cyan-600 to-blue-700 px-7 py-3 font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-lg mb-4 sm:mb-0 sm:mr-5"
               whileHover={{ scale: 1.05 }}
