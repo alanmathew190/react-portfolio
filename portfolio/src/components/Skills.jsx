@@ -13,6 +13,7 @@ import apiIcon from "../images/cloud-api.png";
 import bootIcon from "../images/bootstrap.png"
 import { motion } from "framer-motion";
 import vercelIcon from "../images/Vercel.png" 
+import tailIcon from "../images/Tailwind CSS.png"
   
   const icons = [
     { src: jsIcon, alt: "JavaScript" },
@@ -27,6 +28,7 @@ import vercelIcon from "../images/Vercel.png"
     { src: apiIcon, alt: "API" },
     { src: bootIcon, alt: "BootStrap" },
     { src: vercelIcon, alt: "Vercel" },
+    { src: tailIcon, alt: "Tailwind CSS" },
   ];
 
 
@@ -86,6 +88,28 @@ function Skills() {
             </div>
           ))}
         </div>
+      </div>
+      <h1 className="mt-20 text-2xl font-bold text-center">My Services</h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center w-fit m-auto mt-10 text-xl text-gray-600 font-bold">
+        {[
+          "Frontend Developer",
+          "Full Stack Developer",
+          "React",
+          "Git",
+          "JavaScript",
+          "TailwindCSS",
+          "Python",
+          "Web Developer",
+          "Responsive Design",
+        ].map((skill, i) => (
+          <motion.p
+            key={i}
+            className="px-7 py-3 rounded-2xl border shadow-md bg-white hover:shadow-blue-400/50 hover:scale-105 transition"
+            whileHover={{ rotate: -2, scale: 1.05 }}
+          >
+            {skill}
+          </motion.p>
+        ))}
       </div>
     </div>
   );
