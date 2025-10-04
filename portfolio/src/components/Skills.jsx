@@ -5,25 +5,28 @@ import cssIcon from "../images/css-3.png";
 import vsCode from "../images/logo.png";
 import nodeIcon from "../images/node-js.png";
 import reactIcon from "../images/physics.png";
-import socialIcon from "../images/social.png";
+import gitIcon from "../images/git.png";
 import githubIcon from "../images/ghub.png";
 import htmlIcon from "../images/html-5.png";
 import pythonIcon from "../images/python.png";
 import apiIcon from "../images/cloud-api.png";
+import bootIcon from "../images/bootstrap.png"
 import { motion } from "framer-motion";
-
-
+import vercelIcon from "../images/Vercel.png" 
+  
   const icons = [
     { src: jsIcon, alt: "JavaScript" },
     { src: cssIcon, alt: "CSS" },
     { src: vsCode, alt: "VS Code" },
     { src: nodeIcon, alt: "NodeJS" },
     { src: reactIcon, alt: "React" },
-    { src: socialIcon, alt: "Git" },
+    { src: gitIcon, alt: "Git" },
     { src: githubIcon, alt: "GitHub" },
     { src: htmlIcon, alt: "HTML" },
     { src: pythonIcon, alt: "Python" },
     { src: apiIcon, alt: "API" },
+    { src: bootIcon, alt: "BootStrap" },
+    { src: vercelIcon, alt: "Vercel" },
   ];
 
 

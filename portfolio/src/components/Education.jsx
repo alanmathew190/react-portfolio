@@ -31,7 +31,7 @@ function Education() {
       title: "BTech in Computer Science",
       org: "APJ Abdul Kalam Technological University",
       duration: "Nov 2021 - May 2025",
-      desc: ["CGPA: 7.74"],
+      desc: ["CGPA: 7.69"],
     },
     {
       title: "Higher Secondary Education",

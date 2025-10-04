@@ -34,19 +34,19 @@ function Header() {
         <nav className="hidden md:block">
           <ul className="flex space-x-8 text-gray-700">
             {[
-              { to: "about", label: "About", duration: 500 },
-              { to: "skills", label: "Skills", duration: 600 },
-              { to: "education-experience", label: "Education", duration: 700 },
-              { to: "projects", label: "Projects", duration: 800 },
-              { to: "certificates", label: "Certificates", duration: 900 },
-              { to: "contact", label: "Contact", duration: 1000 },
+              { to: "about", label: "About", duration: 100 },
+              { to: "skills", label: "Skills", duration: 200 },
+              { to: "education-experience", label: "Education", duration: 300 },
+              { to: "projects", label: "Projects", duration: 400 },
+              { to: "certificates", label: "Certificates", duration: 500 },
+              { to: "contact", label: "Contact", duration: 600 },
             ].map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
                   smooth={true}
                   duration={item.duration}
-                  offset={-70} // Adjusted for fixed header height
+                  offset={-50} // Adjusted for fixed header height
                   className={linkBaseClasses}
                   activeClass={linkActiveClass}
                   spy={true} // Needed for activeClass to work

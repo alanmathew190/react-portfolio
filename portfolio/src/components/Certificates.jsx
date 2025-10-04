@@ -7,24 +7,24 @@ function Certificates() {
   const certificates = [
     {
       id: 1,
-      title: "JavaScript Algorithms and Data Structures",
+      title: "Responsive Web Design",
       issuer: "freeCodeCamp",
-      date: "Dec 2024",
-      link: "https://www.freecodecamp.org/certification/fcc13f7c373-87f7-4da2-a3ab-377893146af6/javascript-algorithms-and-data-structures-v8",
+      date: "Feb 2024",
+      link: "https://www.freecodecamp.org/certification/fcc13f7c373-87f7-4da2-a3ab-377893146af6/responsive-web-design",
     },
     {
       id: 2,
-      title: "Frontend Development Libraries",
-      issuer: "freeCodeCamp",
+      title: "Introduction to Career Skills in Software Development.",
+      issuer: "linkedIn",
       date: "Nov 2024",
       link: "https://www.freecodecamp.org/certification/fcc13f7c373-87f7-4da2-a3ab-377893146af6/front-end-development-libraries-v8",
     },
     {
       id: 3,
-      title: "Responsive Web Design",
+      title: "JavaScript Algorithms and Data Structures",
       issuer: "freeCodeCamp",
-      date: "Oct 2024",
-      link: "https://www.freecodecamp.org/certification/fcc13f7c373-87f7-4da2-a3ab-377893146af6/responsive-web-design",
+      date: "Dec 2024",
+      link: "https://www.freecodecamp.org/certification/fcc13f7c373-87f7-4da2-a3ab-377893146af6/javascript-algorithms-and-data-structures-v8",
     },
   ];
 
