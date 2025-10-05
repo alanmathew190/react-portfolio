@@ -137,9 +137,11 @@ function Skills() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 whileHover={{ scale: 1.08, rotateY: 6, rotateX: 2 }}
                 className="relative group"
+                whileTap={{ scale: 0.95 }}
               >
                 {/* Glass 3D Brick */}
-                <div className="relative px-8 py-6 rounded-2xl bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                <div className="relative px-8 py-6 glass-brick rounded-2xl bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                  <div className="shine"></div>
                   <motion.p
                     whileHover={{ scale: 1.1 }}
                     className="font-semibold text-lg text-gray-900 tracking-wide"
