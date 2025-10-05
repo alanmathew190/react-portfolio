@@ -115,11 +115,11 @@ function BlurCard({ item, index }) {
 
         {/* Card with blur transition */}
         <motion.div
-          initial={{ opacity: 0.4, filter: "blur(12px)", y: 60 }}
+          initial={{ opacity: 0.4, filter: "blur(12px)", y: 10 }}
           animate={
             inView
               ? { opacity: 1, filter: "blur(0px)", y: 0 }
-              : { opacity: 0.3, filter: "blur(10px)", y: 50 }
+              : { opacity: 0.3, filter: "blur(10px)", y: 10 }
           }
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-[#1A1A2E]/100 backdrop-blur-lg text-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1"
