@@ -57,12 +57,6 @@ function Header() {
             ))}
           </ul>
         </nav>
-
-        {/* Optional: Add a placeholder for a Mobile Menu Button here */}
-        <div className="md:hidden">
-          {/* Hamburger icon for mobile navigation would go here */}
-          {/* <button>...</button> */}
-        </div>
       </div>
 
       {/* Dynamic Scroll Indicator Line */}
