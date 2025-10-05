@@ -90,7 +90,7 @@ function Education() {
 // 👇 Custom card component with scroll-based blur reveal effect
 function BlurCard({ item, index }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-100px" });
+  const inView = useInView(ref, { once: false, margin: "-200px" });
 
   return (
     <div
