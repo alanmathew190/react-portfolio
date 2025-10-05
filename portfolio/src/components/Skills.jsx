@@ -112,7 +112,7 @@ function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl py-10 font-bold text-gray-900 underline underline-offset-8"
+          className="text-3xl py-10 font-extrabold text-gray-900 underline underline-offset-8"
         >
           My Services
         </motion.h1>
@@ -140,7 +140,7 @@ function Skills() {
                 whileTap={{ scale: 0.95 }}
               >
                 {/* Glass 3D Brick */}
-                <div className="relative px-8 py-8 glass-brick rounded-2xl bg-white/20 backdrop-blur-xl border-b-3 border-1 border-emerald-400 shadow-xl">
+                <div className="relative px-8 py-8 glass-brick rounded-2xl bg-white/20 backdrop-blur-xl border-b-3 border-1 border-blue-400 shadow-xl">
                   <div className="shine"></div>
                   <motion.p
                     whileHover={{ scale: 1.1 }}
