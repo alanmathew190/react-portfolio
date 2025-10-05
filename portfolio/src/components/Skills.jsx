@@ -118,7 +118,7 @@ function Skills() {
         </motion.h1>
 
         {/* 3D Glass Skill Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-10 w-fit m-auto perspective-1000">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 p-5 gap-7 w-fit m-auto perspective-1000">
           {skills.map((skill, i) => (
             <Tilt
               tiltMaxAngleX={15}
