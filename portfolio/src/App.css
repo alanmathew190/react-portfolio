@@ -12,7 +12,7 @@
 
 .animate-gradient {
   background-size: 200% 200%; /* bigger background for movement */
-  animation: gradientMove 10s ease infinite; /* adjust time for speed */
+  animation: gradientMove 4s ease infinite; /* adjust time for speed */
 }
 body{
   font-family: 'Inter', sans-serif;
@@ -23,6 +23,6 @@ html {
 
 
 .hero{
-            background-color: #FFFDF2;
+ background-color: #FFFDF2;
 
 }

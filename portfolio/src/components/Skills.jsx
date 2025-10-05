@@ -140,7 +140,7 @@ function Skills() {
                 whileTap={{ scale: 0.95 }}
               >
                 {/* Glass 3D Brick */}
-                <div className="relative px-8 py-6 glass-brick rounded-2xl bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                <div className="relative px-8 py-8 glass-brick rounded-2xl bg-white/20 backdrop-blur-xl border-b-3 border-1 border-emerald-400 shadow-xl">
                   <div className="shine"></div>
                   <motion.p
                     whileHover={{ scale: 1.1 }}
