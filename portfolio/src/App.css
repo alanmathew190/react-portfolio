@@ -21,58 +21,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* hover: scale + brighten + small image drop-shadow */
-/* img:hover {
-  transform: scale(1.2);
-  transition: 1s;
-  box-shadow: 0 6px 24px rgba(202, 212, 12, 0.22); 
-} */
 
-
-
-.concave {
-  position: relative;
-  width: 100%;
-  height: 300px;               /* height of the panel */
-  background: rgb(33, 33, 33) ;        /* panel color */
-  overflow: hidden;
-  color: #fff;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .hero{
             background-color: #FFFDF2;
 
-}
-
-/* top and bottom inward curves */
-.concave::before{
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200%;                /* wider than panel for smooth curve */
-  height: 175px;              /* curve depth */
-  background:    #FFFDF2;    /* same as page background */
-  border-radius: 90%;
-}
-.concave::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200%;                /* wider than panel for smooth curve */
-  height: 170px;              /* curve depth */
-  background: #ffffff;        /* same as page background */
-  border-radius: 90%;
-}
-
-.concave::before {
-  top: -75px;                 /* half of height up */
-}
-
-.concave::after {
-  bottom: -75px;              /* half of height down */
 }

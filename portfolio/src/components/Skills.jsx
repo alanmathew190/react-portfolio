@@ -14,6 +14,7 @@ import bootIcon from "../images/bootstrap.png"
 import { motion } from "framer-motion";
 import vercelIcon from "../images/Vercel.png" 
 import tailIcon from "../images/Tailwind CSS.png"
+import Tilt from "react-parallax-tilt";
   
   const icons = [
     { src: jsIcon, alt: "JavaScript" },
@@ -45,7 +46,7 @@ import tailIcon from "../images/Tailwind CSS.png"
 
 function Skills() {
   return (
-    <div className="h-fit py-20 bg-[#FFFDF2]" id="skills">
+    <div className="h-fit pt-10 bg-[#FFFDF2]" id="skills">
       <h1 className="text-4xl font-extrabold text-gray-900 text-center mb-16 relative z-20">
         <span className="relative pb-2 inline-block">
           Technical Toolkit
@@ -99,43 +100,83 @@ function Skills() {
           ))}
         </div>
       </div>
-      <div className="mt-20 text-center">
-        <h1 className="text-3xl font-bold text-gray-900 underline underline-offset-8">
+      <div
+        className="mt-20 text-center bg-[#FFFDF2] pb-20  flex flex-col items-center"
+        id="services"
+      >
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl py-10 font-bold text-gray-900 underline underline-offset-8 "
+        >
           My Services
-        </h1>
+        </motion.h1>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-fit m-auto mt-12 text-lg font-bold">
+        {/* 3D Glass Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 w-fit m-auto perspective-1000">
           {skills.map((skill, i) => (
-            <motion.div
+            <Tilt
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={900}
+              transitionSpeed={1000}
+              glareEnable={true}
+              glareMaxOpacity={0.3}
+              scale={1.05}
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.1, rotate: -3 }}
-              className="relative group"
             >
-              {/* Glowing background */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-60 blur-md transition group-hover:opacity-100"></div>
+              <motion.div
+                initial={{ opacity: 0, y: 60, rotateX: -10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{
+                  scale: 1.08,
+                  rotateY: 6,
+                  rotateX: 2,
+                }}
+                className="relative group"
+              >
+                {/* Gradient Edge Glow */}
+                {/* <div className="absolute inset-0 rounded-2xl p-[2px] hover:bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-gradient-move"></div> */}
 
-              {/* Card */}
-              <div className="relative px-7 py-4 rounded-2xl bg-white text-gray-800 shadow-lg border border-gray-200 hover:border-purple-400 transition">
-                {skill}
-              </div>
-            </motion.div>
+                {/* 3D Glass Brick */}
+                <div className="relative px-8 py-6 rounded-2xl bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                  {/* Inner lighting layer */}
+                  {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 via-white/10 to-transparent opacity-40 pointer-events-none"></div> */}
+
+                  {/* Top glossy reflection */}
+                  {/* <div className="absolute top-0 left-0 w-full h-1/3 rounded-t-2xl bg-white/30 opacity-40 blur-sm pointer-events-none"></div> */}
+
+                  {/* Text */}
+                  <motion.p
+                    whileHover={{ scale: 1.1 }}
+                    className="relative font-semibold text-lg text-gray-900 tracking-wide z-10"
+                  >
+                    {skill}
+                  </motion.p>
+                </div>
+              </motion.div>
+            </Tilt>
           ))}
         </div>
 
-        {/* Gradient shimmer animation */}
+        {/* Gradient Animation */}
         <style>{`
-        @keyframes gradient-shimmer {
+        @keyframes gradientMove {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-        .group:hover .absolute {
+        .animate-gradient-move {
           background-size: 200% 200%;
-          animation: gradient-shimmer 3s linear infinite;
+          animation: gradientMove 4s ease infinite;
+        }
+        .perspective-1000 {
+          perspective: 1000px;
         }
       `}</style>
       </div>

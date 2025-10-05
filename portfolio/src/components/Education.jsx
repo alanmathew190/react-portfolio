@@ -39,6 +39,12 @@ function Education() {
       duration: "Jun 2019 - Mar 2021",
       desc: ["Computer Science, Percentage: 85.7%"],
     },
+    {
+      title: "High School Education",
+      org: "C.V.K.M",
+      duration: "Jun 2016 - Mar 2019",
+      desc: ["Class 8-10, Percentage: 95%"],
+    },
   ];
 
   const timeline = [...experiences, ...education];
@@ -54,7 +60,7 @@ function Education() {
   return (
     <section
       id="education-experience"
-      className="bg-[#FFFDF2] py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-[#FFFDF2] pt-10 pb-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-center text-4xl font-extrabold text-gray-900 mb-12 relative pb-3 inline-block">

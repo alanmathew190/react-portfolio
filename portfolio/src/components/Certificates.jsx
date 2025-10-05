@@ -17,7 +17,7 @@ function Certificates() {
       title: "Introduction to Career Skills in Software Development.",
       issuer: "linkedIn",
       date: "Nov 2024",
-      link: "https://www.freecodecamp.org/certification/fcc13f7c373-87f7-4da2-a3ab-377893146af6/front-end-development-libraries-v8",
+      link: "https://www.linkedin.com/learning/certificates/c408c03e8fc2df4ee4c79c47f54f91479c66696ef56d19b80f5fb4d6461d2813",
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ function Certificates() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl border border-gray-800 hover:border-purple-500 transition-all duration-300"
+                className="bg-gray-900 p-6 rounded-2xl sm:hover:border-purple-500 shadow-lg hover:shadow-xl border border-gray-800 hover:border-purple-500 transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
                   <Award className="w-10 h-10 text-purple-400" />
