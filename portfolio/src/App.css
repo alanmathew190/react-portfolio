@@ -15,7 +15,7 @@
   animation: gradientMove 10s ease infinite; /* adjust time for speed */
 }
 body{
-            font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 html {
   scroll-behavior: smooth;

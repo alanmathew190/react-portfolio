@@ -59,7 +59,8 @@ function HeroBanner() {
               options={{
                 strings: [
                   "Web Developer",
-                  "Python Full-Stack Developer",
+                  "Python Full-Stack Developer",
+                  "React Developer"
                 ],
                 autoStart: true,
                 loop: true,

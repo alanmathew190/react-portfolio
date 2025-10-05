@@ -14,6 +14,7 @@ import bootIcon from "../images/bootstrap.png"
 import { motion } from "framer-motion";
 import vercelIcon from "../images/Vercel.png" 
 import tailIcon from "../images/Tailwind CSS.png"
+import mysqlIcon from "../images/mysql.png"
 import Tilt from "react-parallax-tilt";
   
   const icons = [
@@ -30,6 +31,7 @@ import Tilt from "react-parallax-tilt";
     { src: bootIcon, alt: "BootStrap" },
     { src: vercelIcon, alt: "Vercel" },
     { src: tailIcon, alt: "Tailwind CSS" },
+    { src: mysqlIcon, alt: "MySql" },
   ];
   const skills = [
     "Frontend Developer",
@@ -39,7 +41,7 @@ import Tilt from "react-parallax-tilt";
     "JavaScript",
     "TailwindCSS",
     "Python",
-    "Web Developer",
+    "Web Hosting",
     "Responsive Design",
   ];
 
