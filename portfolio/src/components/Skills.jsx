@@ -101,7 +101,7 @@ function Skills() {
         </div>
       </div>
       <div
-        className="mt-20 text-center bg-[#FFFDF2] pb-20  flex flex-col items-center"
+        className="mt-20 text-center bg-[#FFFDF2] pb-20 flex flex-col items-center"
         id="services"
       >
         {/* Title */}
@@ -110,13 +110,13 @@ function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl py-10 font-bold text-gray-900 underline underline-offset-8 "
+          className="text-3xl py-10 font-bold text-gray-900 underline underline-offset-8"
         >
           My Services
         </motion.h1>
 
-        {/* 3D Glass Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 w-fit m-auto perspective-1000">
+        {/* 3D Glass Skill Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-10 w-fit m-auto perspective-1000">
           {skills.map((skill, i) => (
             <Tilt
               tiltMaxAngleX={15}
@@ -133,28 +133,14 @@ function Skills() {
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{
-                  scale: 1.08,
-                  rotateY: 6,
-                  rotateX: 2,
-                }}
+                whileHover={{ scale: 1.08, rotateY: 6, rotateX: 2 }}
                 className="relative group"
               >
-                {/* Gradient Edge Glow */}
-                {/* <div className="absolute inset-0 rounded-2xl p-[2px] hover:bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-gradient-move"></div> */}
-
-                {/* 3D Glass Brick */}
+                {/* Glass 3D Brick */}
                 <div className="relative px-8 py-6 rounded-2xl bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-                  {/* Inner lighting layer */}
-                  {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 via-white/10 to-transparent opacity-40 pointer-events-none"></div> */}
-
-                  {/* Top glossy reflection */}
-                  {/* <div className="absolute top-0 left-0 w-full h-1/3 rounded-t-2xl bg-white/30 opacity-40 blur-sm pointer-events-none"></div> */}
-
-                  {/* Text */}
                   <motion.p
                     whileHover={{ scale: 1.1 }}
-                    className="relative font-semibold text-lg text-gray-900 tracking-wide z-10"
+                    className="font-semibold text-lg text-gray-900 tracking-wide"
                   >
                     {skill}
                   </motion.p>
@@ -164,17 +150,8 @@ function Skills() {
           ))}
         </div>
 
-        {/* Gradient Animation */}
+        {/* Perspective for 3D */}
         <style>{`
-        @keyframes gradientMove {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .animate-gradient-move {
-          background-size: 200% 200%;
-          animation: gradientMove 4s ease infinite;
-        }
         .perspective-1000 {
           perspective: 1000px;
         }
