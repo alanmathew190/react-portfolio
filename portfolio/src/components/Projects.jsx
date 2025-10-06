@@ -49,6 +49,9 @@ function Projects() {
       git: "https://github.com/alanmathew190/Netflix-Clone-App.git",
       tags: ["React", "API", "TMDB"],
     },
+    // {
+    //   title:"Personal Portfolio (React)"
+    // }
   ];
 
   return (
