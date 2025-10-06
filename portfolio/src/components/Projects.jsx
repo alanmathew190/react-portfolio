@@ -6,6 +6,7 @@ import todo from "../images/toda.png";
 import form1 from "../images/form.png";
 import netflix from "../images/netflix.png";
 import notesapp from "../images/notesapp.png";
+import port from '../images/port.png'
 
 function Projects() {
   const projects = [
@@ -49,9 +50,14 @@ function Projects() {
       git: "https://github.com/alanmathew190/Netflix-Clone-App.git",
       tags: ["React", "API", "TMDB"],
     },
-    // {
-    //   title:"Personal Portfolio (React)"
-    // }
+    {
+      img: port,
+      title: "Personal Portfolio (React)",
+      desc: "A modern, interactive portfolio built with React and Tailwind CSS, showcasing my skills, projects, and passion for clean, responsive web design. ",
+      live: "https://react-portfolio-c8ri.vercel.app/",
+      git: "https://github.com/alanmathew190/react-portfolio.git",
+      tags: ["React", "Components", "TailwindCss"],
+    },
   ];
 
   return (
