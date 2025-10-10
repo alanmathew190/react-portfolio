@@ -76,10 +76,9 @@ function HeroBanner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
           >
-            BTech graduate and a passionate Python Full-Stack Developer with
+            BTech graduate and a passionate React FrontEnd Developer with
             hands-on experience building scalable web applications and intuitive
-            user interfaces. Skilled in architecting secure backends with
-            Flask/Django and crafting dynamic frontends with React. Driven by
+            user interfaces. Skilled in crafting dynamic frontends with React. Driven by
             the challenge of turning complex requirements into clean,
             maintainable solutions and eager to contribute to innovative,
             forward-thinking teams.
