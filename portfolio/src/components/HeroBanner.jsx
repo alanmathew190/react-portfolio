@@ -58,9 +58,9 @@ function HeroBanner() {
             <Typewriter
               options={{
                 strings: [
-                  "Web Developer",
-                  "Python Full-Stack Developer",
-                  "React Developer"
+                  "Frontend Developer",
+                  "React Developer",
+                  "Tech Explorer"
                 ],
                 autoStart: true,
                 loop: true,
