@@ -14,8 +14,8 @@ function Projects() {
       img: todo,
       title: "To-do List React App",
       desc: "Strengthened skills in component-based design, state management, and dynamic UI interactions. 🔹 Features: Add, delete, reorder tasks seamlessly.",
-      live: "https://alanmathew190.github.io/React_to-do-list-app/",
-      git: "https://github.com/alanmathew190/React_to-do-list-app.git",
+      live: "https://react-arcite-green.vercel.app/",
+      git: "https://github.com/alanmathew190/reactArcite/tree/867337c62d5c32c2041f8b4fd1f93a15f2f02fcc/day5/day5-1",
       tags: ["React", "JS", "UI"],
     },
     {
