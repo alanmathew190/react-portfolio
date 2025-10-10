@@ -21,13 +21,10 @@ import Tilt from "react-parallax-tilt";
     { src: jsIcon, alt: "JavaScript" },
     { src: cssIcon, alt: "CSS" },
     { src: vsCode, alt: "VS Code" },
-    { src: nodeIcon, alt: "NodeJS" },
     { src: reactIcon, alt: "React" },
     { src: gitIcon, alt: "Git" },
     { src: githubIcon, alt: "GitHub" },
     { src: htmlIcon, alt: "HTML" },
-    { src: pythonIcon, alt: "Python" },
-    { src: apiIcon, alt: "API" },
     { src: bootIcon, alt: "BootStrap" },
     { src: vercelIcon, alt: "Vercel" },
     { src: tailIcon, alt: "Tailwind CSS" },
@@ -35,12 +32,10 @@ import Tilt from "react-parallax-tilt";
   ];
   const skills = [
     "Frontend Developer",
-    "Full Stack Developer",
     "React",
     "Git",
     "JavaScript",
     "TailwindCSS",
-    "Python",
     "Web Hosting",
     "Responsive Design",
   ];
