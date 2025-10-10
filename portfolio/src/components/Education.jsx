@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useSpring, useInView } from "framer-motion";
+import { useDarkMode } from "./ThemeContext";
 
 function Education() {
+  const { darkMode } = useDarkMode();
   const timelineRef = useRef(null);
 
   const experiences = [
@@ -49,7 +51,6 @@ function Education() {
 
   const timeline = [...experiences, ...education];
 
-  // Scroll progress for the vertical timeline line
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start end", "end start"],
@@ -60,25 +61,42 @@ function Education() {
   return (
     <section
       id="education-experience"
-      className="bg-[#FFFDF2] pt-10 pb-16 px-4 sm:px-6 lg:px-8"
+      className={`pt-10 pb-16 px-4 sm:px-6 lg:px-8 transition-colors duration-500 ${
+        darkMode ? "bg-[#0f172a]" : "bg-[#FFFDF2]"
+      }`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-4xl font-extrabold text-gray-900 mb-12 relative pb-3 inline-block">
+        <h2
+          className={`text-center text-4xl font-extrabold mb-12 relative pb-3 inline-block transition-colors duration-500 ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
+        >
           Education & Experience
           <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-1 bg-green-500 rounded"></span>
         </h2>
 
         <div className="relative" ref={timelineRef}>
           {/* Timeline line */}
-          <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 bg-green-200 hidden md:block"></div>
+          <div
+            className={`absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:block transition-colors duration-500 ${
+              darkMode ? "bg-green-700/40" : "bg-green-200"
+            }`}
+          ></div>
           <motion.div
-            className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 bg-green-500 origin-top hidden md:block"
+            className={`absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 origin-top hidden md:block transition-colors duration-500 ${
+              darkMode ? "bg-green-500" : "bg-green-500"
+            }`}
             style={{ scaleY }}
           />
 
           <div className="space-y-12">
             {timeline.map((item, index) => (
-              <BlurCard key={index} item={item} index={index} />
+              <BlurCard
+                key={index}
+                item={item}
+                index={index}
+                darkMode={darkMode}
+              />
             ))}
           </div>
         </div>
@@ -87,8 +105,8 @@ function Education() {
   );
 }
 
-// 👇 Custom card component with scroll-based blur reveal effect
-function BlurCard({ item, index }) {
+// Custom card component
+function BlurCard({ item, index, darkMode }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false, margin: "-200px" });
 
@@ -110,7 +128,11 @@ function BlurCard({ item, index }) {
         <div
           className={`absolute ${
             index % 2 === 0 ? "right-[-10px]" : "left-[-10px]"
-          } top-5 h-5 w-5 rounded-full bg-green-500 border-4 border-[#FFFDF2] hidden md:block`}
+          } top-5 h-5 w-5 rounded-full border-4 hidden md:block transition-colors duration-500 ${
+            darkMode
+              ? "bg-green-500 border-[#0f172a]"
+              : "bg-green-500 border-[#FFFDF2]"
+          }`}
         ></div>
 
         {/* Card with blur transition */}
@@ -122,14 +144,23 @@ function BlurCard({ item, index }) {
               : { opacity: 0.3, filter: "blur(10px)", y: 10 }
           }
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-[#1A1A2E]/100 backdrop-blur-lg text-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1"
+          className={`p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 backdrop-blur-lg ${
+            darkMode
+              ? "bg-gray-700/40 text-white"
+              : "bg-[#1A1A2E]/100 text-white"
+          }`}
         >
           <h3 className="text-2xl font-semibold mb-1">{item.title}</h3>
-          <p className="italic text-green-300 mb-1">{item.org}</p>
+          <p className="italic mb-1 text-green-300">{item.org}</p>
           <p className="italic text-green-300 text-sm mb-3">{item.duration}</p>
           <ul className="list-disc list-inside space-y-2">
             {item.desc.map((point, i) => (
-              <li key={i} className="text-gray-200">
+              <li
+                key={i}
+                className={`transition-colors duration-500 ${
+                  darkMode ? "text-gray-200" : "text-gray-200"
+                }`}
+              >
                 {point}
               </li>
             ))}

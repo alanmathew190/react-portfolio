@@ -1,22 +1,30 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-export const ThemeContext = createContext();
+const DarkModeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+export function DarkModeProvider({ children }) {
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    return saved === "true";
+  });
 
   useEffect(() => {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    setDarkMode(prefersDark);
-  }, []);
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
-      <div className={darkMode ? "dark" : ""}>{children}</div>
-    </ThemeContext.Provider>
+    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+      <div
+        className={`min-h-screen transition-colors duration-500 ${
+          darkMode ? "bg-[#0f172a] text-white" : "bg-[#FFFDF2] text-gray-900"
+        }`}
+      >
+        {children}
+      </div>
+    </DarkModeContext.Provider>
   );
-};
+}
+
+export const useDarkMode = () => useContext(DarkModeContext);

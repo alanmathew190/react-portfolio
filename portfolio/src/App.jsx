@@ -7,12 +7,12 @@ import Projects from './components/Projects'
 import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import './App.css'
-import { ThemeProvider } from './components/ThemeContext'
+import { DarkModeProvider } from './components/ThemeContext'
 
 function App() {
   
   return (
-    <ThemeProvider>
+    <DarkModeProvider>
       <div className="transition-colors duration-500">
         <Header />
         <HeroBanner />
@@ -22,7 +22,7 @@ function App() {
         <Certificates />
         <Contact />
       </div>
-    </ThemeProvider>
+    </DarkModeProvider>
   );
 }
 

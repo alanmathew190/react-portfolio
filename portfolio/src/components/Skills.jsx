@@ -1,5 +1,5 @@
 import React from "react";
-import "./SkillSlider.css"; // Your CSS file
+import "./SkillSlider.css";
 import jsIcon from "../images/java-script.png";
 import cssIcon from "../images/css-3.png";
 import vsCode from "../images/logo.png";
@@ -10,46 +10,59 @@ import githubIcon from "../images/ghub.png";
 import htmlIcon from "../images/html-5.png";
 import pythonIcon from "../images/python.png";
 import apiIcon from "../images/cloud-api.png";
-import bootIcon from "../images/bootstrap.png"
+import bootIcon from "../images/bootstrap.png";
 import { motion } from "framer-motion";
-import vercelIcon from "../images/Vercel.png" 
-import tailIcon from "../images/Tailwind CSS.png"
-import mysqlIcon from "../images/mysql.png"
+import vercelIcon from "../images/Vercel.png";
+import tailIcon from "../images/Tailwind CSS.png";
+import mysqlIcon from "../images/mysql.png";
 import Tilt from "react-parallax-tilt";
-  
-  const icons = [
-    { src: jsIcon, alt: "JavaScript" },
-    { src: cssIcon, alt: "CSS" },
-    { src: vsCode, alt: "VS Code" },
-    { src: reactIcon, alt: "React" },
-    { src: gitIcon, alt: "Git" },
-    { src: githubIcon, alt: "GitHub" },
-    { src: htmlIcon, alt: "HTML" },
-    { src: bootIcon, alt: "BootStrap" },
-    { src: vercelIcon, alt: "Vercel" },
-    { src: tailIcon, alt: "Tailwind CSS" },
-    { src: mysqlIcon, alt: "MySql" },
-  ];
-  const skills = [
-    "Frontend Developer",
-    "React",
-    "Git",
-    "JavaScript",
-    "TailwindCSS",
-    "Web Hosting",
-    "Responsive Design",
-  ];
+import { useDarkMode } from "./ThemeContext";
 
+const icons = [
+  { src: jsIcon, alt: "JavaScript" },
+  { src: cssIcon, alt: "CSS" },
+  { src: vsCode, alt: "VS Code" },
+  { src: reactIcon, alt: "React" },
+  { src: gitIcon, alt: "Git" },
+  { src: githubIcon, alt: "GitHub" },
+  { src: htmlIcon, alt: "HTML" },
+  { src: bootIcon, alt: "BootStrap" },
+  { src: vercelIcon, alt: "Vercel" },
+  { src: tailIcon, alt: "Tailwind CSS" },
+  { src: mysqlIcon, alt: "MySql" },
+];
+
+const skills = [
+  "Frontend Developer",
+  "React",
+  "Git",
+  "JavaScript",
+  "TailwindCSS",
+  "Web Hosting",
+  "Responsive Design",
+];
 
 function Skills() {
+  const { darkMode } = useDarkMode();
+
   return (
-    <div className="h-fit pt-10 bg-[#FFFDF2]" id="skills">
-      <h1 className="text-4xl font-extrabold text-gray-900 text-center mb-16 relative z-20">
+    <div
+      className={`h-fit pt-10 transition-colors duration-500 ${
+        darkMode ? "bg-[#0f172a] text-white" : "bg-[#FFFDF2] text-gray-900"
+      }`}
+      id="skills"
+    >
+      <h1
+        className={`text-4xl font-extrabold text-center mb-16 relative z-20 transition-colors duration-500 ${
+          darkMode ? "text-white" : "text-gray-900"
+        }`}
+      >
         <span className="relative pb-2 inline-block">
           Technical Toolkit
           <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/3 h-1 bg-green-500 rounded"></span>
         </span>
       </h1>
+
       {/* Row 1 */}
       <div
         className="slider"
@@ -63,7 +76,9 @@ function Skills() {
           {icons.map((icon, idx) => (
             <div
               key={idx}
-              className="item bg-gray-100 "
+              className={`item transition-colors duration-500 ${
+                darkMode ? "bg-gray-700" : "bg-gray-100"
+              }`}
               style={{ "--position": idx + 1 }}
             >
               <img src={icon.src} alt={icon.alt} />
@@ -88,7 +103,9 @@ function Skills() {
           {icons.map((icon, idx) => (
             <div
               key={idx}
-              className="item bg-gray-100"
+              className={`item transition-colors duration-500 ${
+                darkMode ? "bg-gray-700" : "bg-gray-100"
+              }`}
               style={{ "--position": idx + 1 }}
             >
               <img src={icon.src} alt={icon.alt} />
@@ -97,8 +114,11 @@ function Skills() {
           ))}
         </div>
       </div>
+
       <div
-        className="mt-20 text-center bg-[#FFFDF2] pb-20 flex flex-col items-center"
+        className={`mt-20 text-center pb-20 flex flex-col items-center transition-colors duration-500 ${
+          darkMode ? "bg-[#0f172a]" : "bg-[#FFFDF2]"
+        }`}
         id="services"
       >
         {/* Title */}
@@ -107,7 +127,9 @@ function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl py-10 font-extrabold text-gray-900 underline underline-offset-8"
+          className={`text-3xl py-10 font-extrabold underline underline-offset-8 transition-colors duration-500 ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
         >
           My Services
         </motion.h1>
@@ -134,12 +156,17 @@ function Skills() {
                 className="relative group"
                 whileTap={{ scale: 0.95 }}
               >
-                {/* Glass 3D Brick */}
-                <div className="relative px-8 py-8 glass-brick rounded-2xl bg-white/20 backdrop-blur-xl border-b-3 border-1 border-blue-400 shadow-xl">
+                <div
+                  className={`relative px-8 py-8 glass-brick rounded-2xl backdrop-blur-xl border-b-3 border-1 border-blue-400 shadow-xl transition-colors duration-500 ${
+                    darkMode ? "bg-gray-700/20" : "bg-white/20"
+                  }`}
+                >
                   <div className="shine"></div>
                   <motion.p
                     whileHover={{ scale: 1.1 }}
-                    className="font-semibold text-lg text-gray-900 tracking-wide"
+                    className={`font-semibold text-lg tracking-wide transition-colors duration-500 ${
+                      darkMode ? "text-white" : "text-gray-900"
+                    }`}
                   >
                     {skill}
                   </motion.p>
@@ -149,12 +176,11 @@ function Skills() {
           ))}
         </div>
 
-        {/* Perspective for 3D */}
         <style>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-      `}</style>
+          .perspective-1000 {
+            perspective: 1000px;
+          }
+        `}</style>
       </div>
     </div>
   );
