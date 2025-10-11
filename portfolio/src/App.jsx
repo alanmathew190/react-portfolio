@@ -13,7 +13,7 @@ function App() {
   
   return (
     <DarkModeProvider>
-      <div className="transition-colors duration-500">
+      <div className="transition-colors duration-500 h-[100dvh]">
         <Header />
         <HeroBanner />
         <Skills />
