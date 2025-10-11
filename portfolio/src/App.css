@@ -50,9 +50,3 @@ html, body {
   overflow-x: hidden; /* prevents horizontal scroll */
   background-color: #000; /* or your page bg color */
 }
-.min-h-screen {
-  min-height: 100dvh; /* dynamic viewport height */
-}
-* {
-  outline: 1px solid red;
-}
