@@ -25,7 +25,7 @@ function HeroBanner() {
 
   return (
     <div
-      className={`p-7 relative min-h-screen flex flex-col justify-center overflow-hidden transition-colors duration-500 ${
+      className={`p-7 relative h-[100dvh] flex flex-col justify-center overflow-hidden transition-colors duration-500 ${
         darkMode ? "bg-[#0f172a] text-white" : "bg-[#FFFDF2] text-gray-900"
       }`}
       id="about"
