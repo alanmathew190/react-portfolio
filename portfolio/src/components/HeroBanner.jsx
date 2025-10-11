@@ -33,7 +33,7 @@ function HeroBanner() {
       {/* Background Circles */}
       <div className="absolute inset-0 z-0">
         <div className="absolute w-72 h-72 bg-cyan-500/10 rounded-full top-30 left-20 animate-pulse mix-blend-multiply"></div>
-        <div className="absolute w-80 h-80 bg-blue-500/10 rounded-full bottom-30 right-20 animate-pulse mix-blend-multiply"></div>
+        <div className="absolute w-80 h-80 bg-blue-500/10 rounded-full bottom-15 right-30 animate-pulse mix-blend-multiply"></div>
       </div>
 
       {/* Content */}

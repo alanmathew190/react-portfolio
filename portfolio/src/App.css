@@ -43,3 +43,9 @@ html {
   background-size: 300% 300%;
   animation: gradient-x 15s ease infinite;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* or your page bg color */
+}
