@@ -25,14 +25,14 @@ function HeroBanner() {
 
   return (
     <div
-      className={`p-7 relative min-h-screen flex flex-col justify-center overflow-hidden transition-colors duration-500 ${
+      className={`p-7 pt-50 relative min-h-screen flex flex-col justify-center overflow-hidden transition-colors duration-500 ${
         darkMode ? "bg-[#0f172a] text-white" : "bg-[#FFFDF2] text-gray-900"
       }`}
       id="about"
     >
       {/* Background Circles */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute w-72 h-72 bg-cyan-500/10 rounded-full top-10 left-10 animate-pulse mix-blend-multiply"></div>
+        <div className="absolute w-72 h-72 bg-cyan-500/10 rounded-full top-30 left-20 animate-pulse mix-blend-multiply"></div>
         <div className="absolute w-80 h-80 bg-blue-500/10 rounded-full bottom-30 right-20 animate-pulse mix-blend-multiply"></div>
       </div>
 
