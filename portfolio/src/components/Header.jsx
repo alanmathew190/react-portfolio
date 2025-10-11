@@ -5,11 +5,30 @@ import { HiMenu, HiX } from "react-icons/hi";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // mobile menu state
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true); // 👈 new state
   const { darkMode, toggleDarkMode } = useDarkMode();
 
+  // Detect scroll direction
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Add shadow / background when scrolled
+      setScrolled(currentScrollY > 10);
+
+      // Show header when scrolling up, hide when down
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShowHeader(false); // scroll down → hide
+      } else {
+        setShowHeader(true); // scroll up → show
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,14 +50,16 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-[100] backdrop-blur-md shadow-sm transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-[100] backdrop-blur-md shadow-sm transition-all duration-500 transform
+      ${
         darkMode
           ? "bg-[#0f172a]/80 text-white"
           : "bg-[#FFFDF2]/70 text-gray-900"
-      }`}
+      }
+      ${showHeader ? "translate-y-0" : "-translate-y-full"}
+    `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
         <h1 className="text-2xl tracking-wide font-extrabold">
           A<span className="text-cyan-600">J</span>M
         </h1>
@@ -105,17 +126,15 @@ function Header() {
       {/* Mobile Side Menu */}
       <div
         className={`fixed top-0 left-0 h-full w-64 
-    ${darkMode ? "bg-[#0f172a]/80" : "bg-white/40"} 
-    backdrop-blur-3xl shadow-xl transform transition-transform duration-300 z-50 
-    ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
+          ${darkMode ? "bg-[#0f172a]/80" : "bg-white/40"} 
+          backdrop-blur-3xl shadow-xl transform transition-transform duration-300 z-50 
+          ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        {/* Optional: Add a semi-transparent overlay behind the menu */}
         <div
           className="absolute inset-0 bg-black/20 backdrop-blur-sm"
           onClick={() => setMenuOpen(false)}
         ></div>
 
-        {/* Menu content */}
         <div className="relative flex flex-col h-full">
           <div className="flex justify-between items-center px-6 py-4">
             <h2 className="text-xl font-bold">Menu</h2>
@@ -123,11 +142,11 @@ function Header() {
 
           <nav
             className={`flex flex-col mt-3 space-y-2 px-6 py-4 rounded-b-xl transition-all duration-300
-      ${
-        darkMode
-          ? "backdrop-blur-2xl bg-[#0f172a]/90 border border-gray-700"
-          : "backdrop-blur-2xl bg-gray-400/80 border border-gray-300"
-      }`}
+              ${
+                darkMode
+                  ? "backdrop-blur-2xl bg-[#0f172a]/90 border border-gray-700"
+                  : "backdrop-blur-2xl bg-gray-400/80 border border-gray-300"
+              }`}
           >
             {navLinks.map((item) => (
               <Link
@@ -139,14 +158,13 @@ function Header() {
                 spy={true}
                 onClick={() => setMenuOpen(false)}
                 className={`${linkBaseClasses} relative py-2 px-3 rounded-md transition-all duration-300 
-            ${
-              darkMode
-                ? "text-gray-300 hover:text-cyan-400 hover:translate-x-1 hover:scale-105 hover:shadow-lg"
-                : "text-gray-900 hover:text-cyan-600 hover:translate-x-1 hover:scale-105 hover:shadow-lg"
-            }`}
+                ${
+                  darkMode
+                    ? "text-gray-300 hover:text-cyan-400 hover:translate-x-1 hover:scale-105 hover:shadow-lg"
+                    : "text-gray-900 hover:text-cyan-600 hover:translate-x-1 hover:scale-105 hover:shadow-lg"
+                }`}
               >
                 {item.label}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
