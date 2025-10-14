@@ -78,12 +78,12 @@ function Education() {
         <div className="relative" ref={timelineRef}>
           {/* Timeline line */}
           <div
-            className={`absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:block transition-colors duration-500 ${
+            className={`absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 transition-colors duration-500 ${
               darkMode ? "bg-green-700/40" : "bg-green-200"
             }`}
           ></div>
           <motion.div
-            className={`absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 origin-top hidden md:block transition-colors duration-500 ${
+            className={`absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 origin-top transition-colors duration-500 ${
               darkMode ? "bg-green-500" : "bg-green-500"
             }`}
             style={{ scaleY }}
@@ -113,11 +113,9 @@ function BlurCard({ item, index, darkMode }) {
   return (
     <div
       ref={ref}
-      className={`flex ${
-        index % 2 === 0
-          ? "md:justify-start justify-end"
-          : "justify-end md:justify-end"
-      } w-full`}
+      className={`flex flex-col md:flex-row w-full ${
+        index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+      }`}
     >
       <div
         className={`w-full md:w-1/2 relative ${
@@ -126,9 +124,7 @@ function BlurCard({ item, index, darkMode }) {
       >
         {/* Timeline dot */}
         <div
-          className={`absolute ${
-            index % 2 === 0 ? "right-[-10px]" : "left-[-10px]"
-          } top-5 h-5 w-5 rounded-full border-4 hidden md:block transition-colors duration-500 ${
+          className={`absolute md:static top-0 left-1/2 transform -translate-x-1/2 md:translate-x-0 mt-[-10px] md:mt-5 h-5 w-5 rounded-full border-4 transition-colors duration-500 ${
             darkMode
               ? "bg-green-500 border-[#0f172a]"
               : "bg-green-500 border-[#FFFDF2]"
@@ -170,5 +166,6 @@ function BlurCard({ item, index, darkMode }) {
     </div>
   );
 }
+
 
 export default Education;
