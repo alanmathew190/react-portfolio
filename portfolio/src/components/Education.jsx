@@ -12,7 +12,7 @@ function Education() {
       org: "Arcite PMC",
       duration: "Jun 2025 - Present",
       desc: [
-        "Developing scalable full-stack applications using React, Flask, and MySQL.",
+        "Developing scalable full-stack applications using React, Django, and MySQL.",
         "Implementing real-time features and API integrations.",
       ],
     },
